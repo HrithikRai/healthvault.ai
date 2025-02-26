@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthVault.ai - Talk to your health</title>
+    <link rel="icon" href="static/images/icon.png">
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Styles for Google Translate */
+        .google-translate-container {
+            display: flex;
+            align-items: center;
+            background: #f1f1f1;
+            padding: 5px 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .google-translate-container select {
+            border: none;
+            background: transparent;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Hide the "Translated to" bar */
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
+        }
+
+        body {
+            top: 0px !important;
+        }
+    </style>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: 'ar,zh-CN,zh-TW,cs,nl,en,fr,de,el,he,hi,id,it,ja,ko,fa,pl,pt,ro,ru,es,tr,uk,vi',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                }, 'google_translate_element');
+            }
+        </script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+
+<body>
+
+    <!-- **** Header Section **** -->
+
+    <div class="header">
+        <nav>
+            <a href="index.html"><img src="assets/images/logo.png" class="logo" alt=""></a>
+            <div>
+                <div id="google_translate_element"></div>
+                <a href="{{ url_for('login') }}"><button>Sign In</button></a>
+            </div>
+        </nav>
+
+        <div class="header-content">
+            <h1>HealthVault - Talk to your Health</h1>
+            <h3>AI-Driven Health Insights, Anytime, Anywhere</h3>
+            <p>Your entire medical history, at your fingertips.</p>
+            <form action="#" class="email-signup">
+                <input type="email" placeholder="Email address" required>
+                <button type="submit">Get Started <i class="fas fa-chevron-right"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- **** Features Section **** -->
+
+    <section>
+
+        <div class="features">
+            <div class="row">
+                <div class="img-col">
+                    <img src="static/images/ai.gif" alt="">
+                </div>
+                <div class="text-col">
+                    <h2>Meet Eva: Your AI Health Companion</h2>
+                    <p>Eva is here to make sense of your medical reports, scans, and videos—offering clear, actionable insights to help you take control of your health.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="row">
+                <div class="text-col">
+                    <h2>Eva analyzes everything</h2>
+                    Eva isn't just an AI—it's your personal diagnostic assistant. Whether it’s medical reports, diagnostic scans, or video assessments, Eva breaks it all down in a simple, user-friendly format.                  
+                </div>
+                <div class="img-col">
+                    <img src="static/images/brain_scan.gif" alt="">
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div class="features">
+            <div class="row">
+                <div class="img-col">
+                    <img src="static/images/voice.gif" alt="">
+                </div>
+                <div class="text-col">
+                    <h2>Talk to Your Health, Anytime</h2>
+                    <p>Ask Eva anything—via voice or text—and get real-time answers about your health, straight from your reports.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="features">
+            <div class="row">
+                <div class="text-col">
+                    <h2>Stay Ahead with Research and Innovation</h2>
+                    Eva doesn’t just stop at analysis. She also provides you with the latest research, treatment protocols, and technological advances relevant to your condition, ensuring that you’re always informed and up-to-date.                  
+                </div>
+                <div class="img-col">
+                    <img src="static/images/research.gif" alt="">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- **** FAQ Section ****  -->
+
+    <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <ul class="accordion">
+
+            <li>
+                <input type="radio" name="accordion" id="first">
+                <label for="first">What is HealthVault.ai?</label>
+                <div class="content">
+                    <p>HealthVault.ai is a chatbot and a virtual assistant that helps you with all your reports.
+                    </p>
+                </div>
+            </li>
+
+            <li>
+                <input type="radio" name="accordion" id="second">
+                <label for="second">How much does HealthVault.ai cost?</label>
+                <div class="content">
+                    <p>Watch HealthVault.ai on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one
+                        fixed monthly fee. Plans range from ₹ 149 to ₹ 649 a month. No extra costs, no contracts.</p>
+                </div>
+            </li>
+
+         
+
+            <li>
+                <input type="radio" name="accordion" id="fourth">
+                <label for="fourth">How do I cancel?</label>
+                <div class="content">
+                    <p>HealthVault.ai is flexible. There are no annoying contracts and no commitments. You can easily cancel
+                        your account online in two clicks. There are no cancellation fees - start or stop your account
+                        anytime.</p>
+                </div>
+            </li>
+
+      
+
+        </ul>
+        
+        <form action="#" class="email-signup">
+            <input type="email" placeholder="Email address" required>
+            <button type="submit">Get Started <i class="fas fa-chevron-right"></i></button>
+        </form>
+    </div>
+
+    <!-- ****  Footer Section ****  -->
+
+    <div class="footer">
+        <h2>Questions? call +91-9617898678</h2>
+
+        <div class="row">
+
+            <div class="col">
+                <a href="#">FAQ</a>
+
+            </div>
+
+            <div class="col">
+                <a href="#">Help Center</a>
+
+            </div>
+
+            <div class="col">
+
+                <a href="#">Only on HealthVault.ai</a>
+            </div>
+
+            <div class="col">
+                <a href="#">Terms of Use</a>
+                <a href="#">Contact Us</a>
+            </div>
+
+        </div>
+
+
+        <select class="language-btn">
+            <option value="">English</option>
+            <option value="">Hindi</option>
+            <img src="images/down-icon.png" alt="">
+        </select>
+
+        <p class="copyright-text">HealthVault.ai India</p>
+
+        <div class="developer">
+            <p>Developed with 💖 by Hrithik</p>
+            <small>&copy; Copyright 2025 | Designed & Developed by Hrithik Rai Saxena | All Rights Reserved.</small>
+        </div>
+
+    </div>
+
+    
+</body>
+
+</html>

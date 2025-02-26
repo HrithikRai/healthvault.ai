@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthVault.ai - Login</title>
+    <link rel="icon" href="static/images/icon.png">
+    <link rel="stylesheet" href="static/css/login.css">
+</head>
+
+<body>
+
+    <div>
+        <img class="img-bg" src="static/images/netflix-bg.jpg" alt="">
+    </div>
+
+    <header>
+        <a href="{{ url_for('home') }}"><img class="logo" src="static/images/icon.png" alt=""></a>
+    </header>
+
+    <div class="login-box">
+        <h2>Sign In</h2>
+
+        <!-- Login Form -->
+        <form action="{{ url_for('login') }}" method="post">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <div class="rememberme-box">
+            <div>
+                <input type="checkbox" name="remember_me" id="remember-me">
+                <label for="remember-me">Remember Me</label>
+            </div>
+
+            <p>Need Help?</p>
+        </div>
+
+        <div class="signup-box">
+            <p>New to HealthVault.ai? <span><a href="index.html">Sign up now</a></span>. </p>
+            <p class="sm-text">This page is protected by Google reCAPTCHA to ensure you're not a bot. <span>Learn more</span></p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>Questions? call +91-9617898678</h2>
+
+        <div class="row">
+            <div class="col"><a href="#">FAQ</a><a href="#">Cookies Preferences</a></div>
+            <div class="col"><a href="#">Help Center</a><a href="#">Corporate Information</a></div>
+            <div class="col"><a href="#">Terms of Use</a></div>
+            <div class="col"><a href="#">Privacy</a></div>
+        </div>
+
+        <div class="developer">
+            <p>Developed with 💖 by Hrithik</p>
+            <small>&copy; Copyright 2025 | Designed & Developed by Hrithik Rai Saxena | All Rights Reserved.</small>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 12px;
+            font-family: sans-serif;
+            background: black;
+            text-align: center;
+        }
+        .container {
+            text-align: center;
+            /* perfect centering */
+            left: 50%;
+            top: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 350px;
+        }
+        ul {
+            list-style: none;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+            backdrop-filter: blur(10px); /* Frosted glass effect */
+            -webkit-backdrop-filter: blur(10px); /* Safari support */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+            max-height: 0;
+            transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+            overflow: hidden;
+            visibility: hidden;
+            opacity: 0;
+            transform: rotate(180deg);
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for depth */
+        }
+
+        li a {
+            padding: 12px 0;
+            display: block;
+            transition: .25s;
+        }
+        li a:hover {
+            background: #6fabbc;
+        }
+        a {
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        i {
+            padding: 20px;
+            background: rgba(255, 255, 255, .75);
+            border-radius: 3px;
+            color: #6fabbc;
+            transition: .25s;
+            animation: 1.25s bounce infinite;
+        }
+        i:hover {
+            cursor: pointer;
+            background: rgba(255, 255, 255, .95);
+            animation-play-state: paused;
+        }
+        ul.open {
+            max-height: 480px;
+            visibility: visible;
+            opacity: 1;
+            transform: rotate(0);
+        }
+        #logo{
+    width: 60vw;
+
+        }
+        /* animation */
+        @keyframes bounce {
+            0% {margin-top: 0;}
+            50% {margin-top: -15px; margin-bottom: 15px;}
+            100% {margin-top: 0;}
+        }
+        /* Credit */
+        .container ~ * {
+            color: #0d0d0d;
+            text-transform: uppercase;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+    <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Add jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <img src="static/images/ai.gif" alt="logo" id="logo">
+    <div class="container">
+        <i class="fa fa-bars" title="Click me!"></i>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('upload_file') }}">Upload Report</a></li>
+            <li><a href="#">View Report</a></li>
+            <li><a href="{{ url_for('chatbot') }}">Chat with Reports</a></li>
+            <li><a href="{{ url_for('virtual_assistant') }}">Talk with Reports</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("i").click(function () {
+                $("ul").toggleClass("open");
+            });
+        });
+    </script>
+</body>
+</html>

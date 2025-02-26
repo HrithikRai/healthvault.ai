@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
+    <style>
+        /* Import Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        /* Body Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0a0a0a;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* Glassmorphic Form */
+        .upload-container {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 320px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* File Input Styling */
+        .upload-container input[type="file"] {
+            display: none;
+        }
+
+        .file-label {
+            display: block;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .file-label:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Upload Button */
+        button {
+            background: linear-gradient(135deg, #ff007f, #6200ea);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s ease;
+            margin-top: 15px;
+            width: 100%;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(255, 0, 127, 0.3);
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #6200ea, #ff007f);
+            box-shadow: 0 5px 20px rgba(255, 0, 127, 0.5);
+        }
+
+        /* Animation */
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px rgba(255, 0, 127, 0.3); }
+            50% { box-shadow: 0 0 20px rgba(255, 0, 127, 0.7); }
+            100% { box-shadow: 0 0 10px rgba(255, 0, 127, 0.3); }
+        }
+
+        .upload-container:hover {
+            animation: glow 2s infinite alternate;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <label for="file-upload" class="file-label">Choose a File</label>
+        <input type="file" id="file-upload" name="file" required>
+        <button type="submit">Upload</button>
+    </div>
+</body>
+</html>
