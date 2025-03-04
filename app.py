@@ -4,25 +4,21 @@ from backend.agentic_flow import process_files_in_directory
 from backend.rag import update_rag_chain
 
 app = Flask(__name__)
-app.secret_key = "your_secret_key_here"  # Required for session management
 
-# Mock user database (Replace with actual database)
+# Mock user database 
 users = {
     "user@example.com": "password123",
     "test@healthvault.ai": "testpass",
     "test@gmail.com": "test"
 }
-# Set the folder to save uploaded files
+
+# Setting the folder to save uploaded files
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/')
 def home():
     return render_template('index.html')
-
-# @app.route('/dashboard')
-# def login():
-#     return render_template('dashboard.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -32,10 +28,10 @@ def login():
 
         if email == 'test@gmail.com' and password == 'test':
             session['user'] = email
-            return redirect(url_for('dashboard'))  # Redirects correctly
-
+            return redirect(url_for('dashboard'))  
+        # Only redirect to home if credentials are wrong
         flash("Invalid credentials, try again.", "danger")
-        return redirect(url_for('home'))  # Only redirect to home if credentials are wrong
+        return redirect(url_for('home'))  
 
     return render_template('login.html') 
 
